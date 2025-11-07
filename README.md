@@ -1,5 +1,7 @@
 # Multi Port Scanner
 
+<img width="506" height="253" alt="image" src="https://github.com/user-attachments/assets/e2b14bb3-6e45-4137-8988-3b75c131ad04" />
+
 ## Group Members
 - Björn
 - Daniel
@@ -58,6 +60,7 @@ To work in a team
 Troubleshooting
 Testing...and testing again
 Better Python and Github abilities
+
 
 
 

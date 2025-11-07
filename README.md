@@ -26,10 +26,10 @@ python multi_port_scanner.py
 2. Enter an IP-adress or URL
 3. Enter the starting port in the range
 4. Enter the last port in the range
-5. Take a snack and a drink and enjoy the loading bar
+5. Take a snack and a drink, enjoy the loading bar and the music
 ```
 
-## Features
+## Features (Group Project)
 - [x] Single port check
 - [x] Multi-port scanning
 - [x] Service identification
@@ -40,12 +40,17 @@ python multi_port_scanner.py
 - [x] User friendly CLI arguments and installation package through requirements.txt
 - [x] User friendly URL inputs
 
+## Individual Added Features (Lukas Svensson)
+- [x] Colorful ASCII banner using PyFiglet and coloroma
+- [x] Randomly selected background music while scanning ports
+
 ## Testing
 Tested through scanme.nmap.org sites ports(1-100). Testing was succesful!
 
 ## Known Limitations
-No threading function(yet)
+No threading function(yet).
 Could have been faster.
+Only 5 musics options available.  
 
 ## What We Learned
 Basic port scanning abilities

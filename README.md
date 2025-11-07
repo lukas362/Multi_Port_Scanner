@@ -1,4 +1,4 @@
-# Multi Network Scanner
+# Multi Port Scanner
 
 ## Group Members
 - Björn
@@ -58,5 +58,6 @@ To work in a team
 Troubleshooting
 Testing...and testing again
 Better Python and Github abilities
+
 
 

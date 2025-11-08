@@ -172,33 +172,36 @@ if __name__ == "__main__":
         max_port = int(input(BLUE + 'Ending port: '))
         timeout = float(input(BLUE + "Set timout for each port: "))
 
-    # os.path.join = figuers out if it should use / or \\ depedning on your opearting system, os.path.dirname(__file__) = it finds and opens my music_folder where my Python script is saved
-    music_folder = os.path.join(os.path.dirname(__file__), "music_folder")
+        play = input("Do you want to hear some music while waiting for the scan to finish? [Yes/No]: ").lower()
+        if play == "yes": 
+        
+            # os.path.join = figuers out if it should use / or \\ depedning on your opearting system, os.path.dirname(__file__) = it finds and opens my music_folder where my Python script is saved
+            music_folder = os.path.join(os.path.dirname(__file__), "music_folder")
 
-    # List of music mp3 files that are avalible to play
-    music = [
-        "Toby Fox - DELTARUNE Chapters 3+4 OST - 20 Raise Up Your Bat.mp3",
-        "Toby Fox - DELTARUNE Chapters 3+4 OST - 26 TV WORLD.mp3",
-        "32 Attack of the Killer Queen.mp3",
-        "23 NOW'S YOUR CHANCE TO BE A.mp3",
-        "06 A CYBER'S WORLD-.mp3"
-    ]
+            # List of music mp3 files that are avalible to play
+            music = [
+                "Toby Fox - DELTARUNE Chapters 3+4 OST - 20 Raise Up Your Bat.mp3",
+                "Toby Fox - DELTARUNE Chapters 3+4 OST - 26 TV WORLD.mp3",
+                "32 Attack of the Killer Queen.mp3",
+                "23 NOW'S YOUR CHANCE TO BE A.mp3",
+                "06 A CYBER'S WORLD-.mp3"
+            ]
 
-    # Randomly seclets a music file from the list above
-    selected_filename = random.choice(music)
+            # Randomly seclets a music file from the list above
+            selected_filename = random.choice(music)
 
-    # os.path.join = figuers out if it should use / or \\ depedning on your opearting system, it opens music_folder and chooses a random music from the music list
-    path = os.path.join(music_folder, selected_filename)
+            # os.path.join = figuers out if it should use / or \\ depedning on your opearting system, it opens music_folder and chooses a random music from the music list
+            path = os.path.join(music_folder, selected_filename)
 
-    # Loads the music file so it's ready to be used 
-    pygame.mixer.music.load(path)
+            # Loads the music file so it's ready to be used 
+            pygame.mixer.music.load(path)
 
-    # Playes the music, loops=0 means it plays once, start=0.0 means it starts from the beginning, fade_ms=2000 means it fades in for 2 seconds
-    pygame.mixer.music.play(loops=0, start=0.0, fade_ms=2000)
+            # Playes the music, loops=0 means it plays once, start=0.0 means it starts from the beginning, fade_ms=2000 means it fades in for 2 seconds
+            pygame.mixer.music.play(loops=0, start=0.0, fade_ms=2000)
 
-    # Scan the give url with start and end ports
+# Scan the give url with start and end ports
 start_multiscan(target, start_port, max_port, timeout)
 
 # Prints "SCAN COMPLETE" in Pyfiglet 
 i = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
-print(f"{BLUE}" + i)
+print(f"{MAGENTA}" + i)

@@ -45,7 +45,7 @@ python multi_port_scanner.py
 ## Individual Added Features (Lukas Svensson)
 - [x] Colorful ASCII banner using PyFiglet and coloroma
 - [x] Randomly selected background music while scanning ports
-- [x] Option to have music playing while wating for the scanning process 
+- [x] Option to have music playing while waiting for the scanning process 
 
 ## Testing
 Tested through scanme.nmap.org sites ports(1-100). Testing was succesful!
@@ -61,6 +61,7 @@ To work in a team
 Troubleshooting
 Testing...and testing again
 Better Python and Github abilities
+
 
 
 

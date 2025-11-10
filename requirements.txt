@@ -4,3 +4,4 @@ tqdm==4.67.1
 rainbow_tqdm==0.1.5
 pygame==2.4.0
 pyfiglet==1.0.4
+art==5.8.0

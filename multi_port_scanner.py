@@ -9,6 +9,7 @@ from os import environ
 environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "1" #Hides support messsage that pygame prints
 from tqdm import tqdm
 from colorama import init, Fore
+from art import *
 import rainbow_tqdm
 import os
 import socket
@@ -37,7 +38,7 @@ def start_multiscan(target, start_port, max_port, timeout=1.0):
 
     # Calculation for progress bar
     total_ports = max_port - start_port + 1
-    with tqdm(total=total_ports, desc=f"{MAGENTA}Scanning {target} from [{start_port}] to [{max_port}]", unit="port") as progress_bar:
+    with rainbow_tqdm.tqdm(total=total_ports, desc=f"{MAGENTA}Scanning {target} from [{start_port}] to [{max_port}]", unit="port") as progress_bar:
 
         # Set range ports, including the max port
         for port in range(start_port, max_port + 1):
@@ -162,6 +163,20 @@ if __name__ == "__main__":
     # Else inputs from console
     # As last resort, it will ask the user to input IP or domain.
     else: # It will convert <domain name> to IPv4, before asking for <start_port> and <end_port>.
+
+        # Print WELCOME in Pyfiglet 
+        art = text2art("WELCOME",font='block',chr_ignore=True)
+
+        # Define rainbow colors
+        colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
+
+        # Print each line of the banner in different colors. (art.splitlines splits the banner into lines, i % len(colors) cycles through the colour list)
+        for i, line in enumerate(art.splitlines()):
+            print(colors[i % len(colors)] + line)
+
+        # Reset color after banner
+        print(Fore.RESET)  
+
         domain_name = str(input(BLUE + 'Enter target IP or domain: '))
         # Spit url and get the domain name
         if "http" in domain_name:
@@ -198,13 +213,20 @@ if __name__ == "__main__":
             pygame.mixer.music.load(path)
 
             # Playes the music, loops=0 means it plays once, start=0.0 means it starts from the beginning, fade_ms=2000 means it fades in for 2 seconds
-            pygame.mixer.music.play(loops=0, start=0.0, fade_ms=2000)
+            pygame.mixer.music.play(loops=-1, start=0.0, fade_ms=2000)
 
 # Scan the give url with start and end ports
 start_multiscan(target, start_port, max_port, timeout)
 
 # Prints "SCAN COMPLETE" in Pyfiglet 
-i = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
-print(f"{MAGENTA}" + i) 
+scan = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
 
+# Define rainbow colors
+colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
 
+# Print each line of the banner in different colors. (scan.splitlines splits the banner into lines, i % len(colors) cycles through the colour list)
+for i, line in enumerate(scan.splitlines()):
+     print(colors[i % len(colors)] + line)
+
+# Reset color after banner (not needed, but for building future scripts)
+print(Fore.RESET)  

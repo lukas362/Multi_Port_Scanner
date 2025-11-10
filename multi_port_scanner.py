@@ -28,6 +28,9 @@ init()
 GREEN = Fore.GREEN
 MAGENTA =Fore.MAGENTA
 BLUE = Fore.BLUE
+RED = Fore.RED
+YELLOW = Fore.YELLOW
+CYAN = Fore.CYAN
 RESET = Fore.RESET
 
 # Global list to save ports
@@ -37,7 +40,7 @@ open_ports = []
 def start_multiscan(target, start_port, max_port, timeout=1.0):
 
     # Calculation for progress bar
-    total_ports = max_port - start_port + 1
+    total_ports = max_port - start_port + 1 
     with rainbow_tqdm.tqdm(total=total_ports, desc=f"{MAGENTA}Scanning {target} from [{start_port}] to [{max_port}]", unit="port") as progress_bar:
 
         # Set range ports, including the max port
@@ -168,14 +171,14 @@ if __name__ == "__main__":
         art = text2art("WELCOME",font='block',chr_ignore=True)
 
         # Define rainbow colors
-        colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
+        colors = [RED, YELLOW, GREEN, CYAN, BLUE, MAGENTA]
 
         # Print each line of the banner in different colors. (art.splitlines splits the banner into lines, i % len(colors) cycles through the colour list)
         for i, line in enumerate(art.splitlines()):
             print(colors[i % len(colors)] + line)
 
         # Reset color after banner
-        print(Fore.RESET)  
+        print(RESET)  
 
         domain_name = str(input(BLUE + 'Enter target IP or domain: '))
         # Spit url and get the domain name
@@ -222,12 +225,11 @@ start_multiscan(target, start_port, max_port, timeout)
 scan = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
 
 # Define rainbow colors
-colors = [Fore.RED, Fore.YELLOW, Fore.GREEN, Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
+colors = [RED, YELLOW, GREEN, CYAN, BLUE, MAGENTA]
 
 # Print each line of the banner in different colors. (scan.splitlines splits the banner into lines, i % len(colors) cycles through the colour list)
 for i, line in enumerate(scan.splitlines()):
      print(colors[i % len(colors)] + line)
 
 # Reset color after banner (not needed, but for building future scripts)
-print(Fore.RESET)  
-
+print(RESET)  

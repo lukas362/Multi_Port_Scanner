@@ -36,7 +36,7 @@ def start_multiscan(target, start_port, max_port, timeout=1.0):
 
     # Calculation for progress bar
     total_ports = max_port - start_port + 1
-    with tqdm(total=total_ports, desc=f"{BLUE}Scanning {target} from [{start_port}] to [{max_port}]", unit="port") as progress_bar:
+    with tqdm(total=total_ports, desc=f"{MAGENTA}Scanning {target} from [{start_port}] to [{max_port}]", unit="port") as progress_bar:
 
         # Set range ports, including the max port
         for port in range(start_port, max_port + 1):
@@ -172,7 +172,7 @@ if __name__ == "__main__":
         max_port = int(input(BLUE + 'Ending port: '))
         timeout = float(input(BLUE + "Set timout for each port: "))
 
-        play = input("Do you want to hear some music while waiting for the scan to finish? [Yes/No]: ").lower()
+        play = input(f"{MAGENTA}Do you want to hear some music while waiting for the scan to finish? [Yes/No]: ").lower()
         if play == "yes": 
         
             # os.path.join = figuers out if it should use / or \\ depedning on your opearting system, os.path.dirname(__file__) = it finds and opens my music_folder where my Python script is saved
@@ -205,3 +205,4 @@ start_multiscan(target, start_port, max_port, timeout)
 # Prints "SCAN COMPLETE" in Pyfiglet 
 i = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
 print(f"{MAGENTA}" + i)
+

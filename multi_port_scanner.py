@@ -69,7 +69,7 @@ def start_multiscan(target, start_port, max_port, timeout=1.0):
                         if banner:
                             # Add open port to the open_ports list
                             open_ports.append(f"Port {port} : Banner {banner}")
-                            progress_bar.write(f"\nBanner for {target}:{port} -> {banner}")
+                            progress_bar.write(f"{GREEN}\nBanner for {target}:{port} -> {banner}")
                         else:
                             open_ports.append(f"Port {port} : No banner received")
                             progress_bar.write(f"\nNo banner received for {target}:{port}")

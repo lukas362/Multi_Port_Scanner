@@ -227,7 +227,7 @@ scan = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
 # Define rainbow colors
 colors = [RED, YELLOW, GREEN, CYAN, BLUE, MAGENTA]
 
-# Print each line of the banner in different colors. (scan.splitlines splits the banner into lines, i % len(colors) cycles through the colour list)
+# Print each line of the banner in different colors. (scan.splitlines splits the banner into lines, i % len(colors) cycles through the colour list, (enumerate gives us the line number, like assigns numbers to the lines))
 for i, line in enumerate(scan.splitlines()):
      print(colors[i % len(colors)] + line)
 

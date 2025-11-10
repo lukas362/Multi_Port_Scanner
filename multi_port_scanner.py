@@ -33,7 +33,7 @@ YELLOW = Fore.YELLOW
 CYAN = Fore.CYAN
 RESET = Fore.RESET
 
-# Global list to save ports
+# Creates a list to store open ports
 open_ports = []
 
 # Set range ports, including the max port
@@ -197,7 +197,7 @@ if __name__ == "__main__":
             # os.path.join = figuers out if it should use / or \\ depedning on your opearting system, os.path.dirname(__file__) = it finds and opens my music_folder where my Python script is saved
             music_folder = os.path.join(os.path.dirname(__file__), "music_folder")
 
-            # List of music mp3 files that are avalible to play
+            # List of music mp3 files that are avalible to play, [] Creates a list
             music = [
                 "Toby Fox - DELTARUNE Chapters 3+4 OST - 20 Raise Up Your Bat.mp3",
                 "Toby Fox - DELTARUNE Chapters 3+4 OST - 26 TV WORLD.mp3",

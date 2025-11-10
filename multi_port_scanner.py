@@ -9,6 +9,7 @@ from os import environ
 environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "1" #Hides support messsage that pygame prints
 from tqdm import tqdm
 from colorama import init, Fore
+import rainbow_tqdm
 import os
 import socket
 import sys
@@ -204,5 +205,6 @@ start_multiscan(target, start_port, max_port, timeout)
 
 # Prints "SCAN COMPLETE" in Pyfiglet 
 i = pyfiglet.figlet_format("SCAN COMPLETE", font="slant")
-print(f"{MAGENTA}" + i)
+print(f"{MAGENTA}" + i) 
+
 

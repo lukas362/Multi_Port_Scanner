@@ -9,7 +9,7 @@ from os import environ
 environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "1" #Hides support messsage that pygame prints
 from tqdm import tqdm
 from colorama import init, Fore
-from art import *
+from art import text2art
 import rainbow_tqdm
 import os
 import socket
@@ -230,3 +230,4 @@ for i, line in enumerate(scan.splitlines()):
 
 # Reset color after banner (not needed, but for building future scripts)
 print(Fore.RESET)  
+

@@ -46,7 +46,7 @@ def start_multiscan(target, start_port, max_port, timeout=1.0):
         # Set range ports, including the max port
         for port in range(start_port, max_port + 1):
             #AF_INET = IPv4, SOCK_STREAM = constant, create a TCP socket, Socket = endpoint for send/recive data (IPv4, adress, TCP)
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
             # Try to connect port with time out
             try:
                 s.settimeout(timeout)
@@ -130,7 +130,7 @@ def save_ports_to_file(target, port_list, file_name="port_results.txt"):
         # Close file
         f.close()
     else:
-        print("\nNo ports are open.")
+        print(f" {RED}\nNo ports are open.")
 
 # Run the program
 if __name__ == "__main__":
@@ -233,4 +233,3 @@ for i, line in enumerate(scan.splitlines()):
 
 # Reset color after banner (not needed, but for building future scripts)
 print(RESET)  
-
